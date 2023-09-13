@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.all
+    render json: { users: @users }, status: :ok
+  end
+
   def create
     @user = User.create!(user_params)
     render json: { user: @user }, status: :created
@@ -28,11 +33,6 @@ class UsersController < ApplicationController
   end
 
   def find_user
-    valid = params[:user_id].is_a? Numeric
-    if valid
       @user = User.find(params[:user_id])
-    else
-      @user = "user_id must be a number"
-    end
   end
 end

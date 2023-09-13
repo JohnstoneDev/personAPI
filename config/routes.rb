@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  get '/api', to: 'users#index'
   post '/api', to: 'users#create'
   get '/api/:user_id', to: 'users#show'
   patch '/api/:user_id', to: 'users#update'
