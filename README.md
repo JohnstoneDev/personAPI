@@ -64,7 +64,7 @@ To run the project locally:
 
   perform database migrations
 
-    rails db:migrate
+    rails db:migrate db:seed
 
   start the server
 
